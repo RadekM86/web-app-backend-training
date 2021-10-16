@@ -11,9 +11,12 @@ mongoose.connect(
 
 const authRoute = require('./routes/auth');
 
+const productsRoute = require('./routes/products');
+
 // Middlewares
 app.use(express.json())
 app.use('/api', authRoute)
+app.use('/api', productsRoute)
 
 app.listen(3000, () => console.log(
     'Server listening on port 3000'
